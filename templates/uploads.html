@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag-2{
+            margin:0%;
+            padding:0%;
+            background-color: rgb(202, 161, 238);
+        }
+        #tag-1{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+ /* background-color: rgba(220, 0, 0, 1);*/
+ background-color:rgb(242, 103, 4);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color:crimson;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Hide the original file input */
+#file-upload {
+  display: none;
+}
+    </style>
+</head>
+<body class="tag-2">
+ <div id="tag-1">
+ <h2><b>Upload File : </b></h2>&nbsp;&nbsp;&nbsp;&nbsp;
+ <div>
+ <form action="/summarize_file" method="post" enctype="multipart/form-data">
+    <label for="file-upload" class="custom-file-upload">
+        Choose File
+      </label>
+      <input id="file-upload" type="file" name="file" accept=".txt, .pdf, .docx"  required>
+ <button type="submit"  class="favorite styled" >Upload</button>
+</div>
+</div>
+ <br>
+ </form>
+ <table>
+  <tr>
+  <!--  <td>
+ <h2>File Content:</h2>
+ <textarea id="file-content" rows="20" cols="70" readonly></textarea>
+</td>-->
+<td>
+    <form style="margin-left:5px;" method="get"> 
+        <h2><b>&nbsp;&nbsp;Summary:</b></h2>
+        <textarea name="output_text" rows="20" cols="130" style="margin:10px;">{{summary}}</textarea>
+    </form>
+</td>
+ </tr>
+ </table>
+ <script>
+    document.getElementById('file-upload').addEventListener('change', function() {
+  var fileName = this.value.split('\\').pop();
+  if (fileName)
+    document.querySelector('.custom-file-upload').innerText = fileName;
+  else
+    document.querySelector('.custom-file-upload').innerText = 'Choose File';
+});
+  </script>
+</body>
+</html>
+
+
+
+
+

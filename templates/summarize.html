@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/summarize.css')}}">
+    <title>Document</title>
+</head>
+<body>
+      <nav class="navbar">
+        <div class="brand-title">Summarizer</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="{{url_for('uploads')}}"><b>Upload Files</b></a></li>
+            <li><a href="{{url_for('web')}}"><b>Enter URL</b></a></li>
+          </ul>
+        </div>
+      </nav>
+      <table style="display:flex;justify-content:center;text-align:center;">
+        <tr>
+        <td>
+    <form method="post">
+        <h2>Enter text : </h2>
+        <textarea  id="input-box" name="input_text" rows="20" cols="70" placeholder="Enter the input text">{{input_text}}</textarea><br>
+        <button type="submit" style="background-color:green;color:white;font-size:30px;" name="summarize">Summarize</button>
+    </form>
+</td>
+<td>
+    <form style="position:realtive;margin-top:-35px;" method="get">
+    <h2>Summary:</h2>
+    <textarea name="output_text" rows="20" cols="70" id="output-box">{{output_text}}</textarea>
+    </form>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

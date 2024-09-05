@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <div class="hero">
+        <video autoplay loop muted plays-inline class="back">
+            <source src="{{url_for('static',filename='images/nature.mp4')}}" type="video/mp4">
+        </video>
+        <nav >
+            <ul>
+                <li><a href="#"><b>Home</b></a></li>
+                <li><a href="{{url_for('summarize')}}"><b>Summarize</b></a></li>
+                <li><a href="{{url_for('about')}}"><b>About</b></a></li>
+                <li><a href="{{url_for('contact')}}"><b>Contact</b></a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h3>QUICK SUMMARIZE</h3>
+            &nbsp;<p style="color:white;font-size:20px;margin:10px;"><i>Summarize Text/DOCX</i></p>
+            <a href="{{url_for('summarize')}}">Click Here</a>
+        </div>
+    </div>
+</body>
+</html>

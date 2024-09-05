@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #735DA5;
+    color: white;
+    height:3.3em;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    margin: 0 3rem;
+}
+
+.navbar-links li:hover {
+    background-color:rgba(207, 178, 209, 0.968);
+}
+#input-box{
+    background-color:rgba(207, 178, 209, 0.968);
+    border-radius: 30px;
+    margin-right:5px;
+    padding:10px;
+    border-width:medium;
+    border-color:rgb(217, 236, 9);
+    
+}
+#output-box{
+    background-color:rgba(207, 178, 209, 0.968);
+    border-radius: 30px;
+    border-color:rgb(217, 236, 9);
+    padding:10px;
+    border-width:medium;
+    
+}
+#input-box:hover{
+    border-color:rgb(217, 236, 9);
+    border-width:medium;
+}
+#output-box:hover{
+    border-color:rgb(217, 236, 9);
+    border-width:medium;
+}
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.text-block{
+    text-align:center;
+    justify-content: center;
+    margin-left:30px;
+}
+input[type="range"] {
+    opacity:1;
+  }
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Content Viewer</title> 
+    <link rel="stylesheet"  type="text/css" href="{{url_for('static',filename='css/text.css')}}"> 
+</head>
+<body class="cont1">
+    <h1 id="head1">Enter Your URL</h1>
+    <form action="/get_text" method="post" class="context">
+        <input type="textbox" name="url" required id="text1" placeholder="enter your url here"><button type="submit" id="btn1">Get Text</button>
+    </form>   
+</body>
+</html>
